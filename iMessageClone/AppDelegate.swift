@@ -10,14 +10,8 @@ import StreamChatUI
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UIConfig.default.channelList.channelListItemView.defaultAppearance.addRule {
-            $0.titleLabel.textColor = .black
-            $0.titleLabel.font = .boldSystemFont(ofSize: 16)
-            
-            $0.timestampLabel.font = .systemFont(ofSize: 15)
-            $0.timestampLabel.textColor = .gray
-        }
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {        
+        UIConfig.default.channelList.channelListItemView = ContactListItemView.self
 
         UIConfig.default.images.newChat = UIImage(systemName: "square.and.pencil")!
         
