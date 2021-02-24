@@ -33,6 +33,9 @@ final class ContactsViewController: ChatChannelListVC {
         
         title = "Messages"
         
+        userAvatarView.isHidden = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonTapped))
+        
         createNewChannelButton
             .setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
         
@@ -42,5 +45,11 @@ final class ContactsViewController: ChatChannelListVC {
     @available(*, unavailable)
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Helpers
+    
+    @objc
+    private func editButtonTapped() {
     }
 }
